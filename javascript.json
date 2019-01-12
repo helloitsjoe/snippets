@@ -1,0 +1,82 @@
+{
+  "Console log variable": {
+    "prefix": "cll",
+    "body": ["console.log(`$1:`, $1);"],
+    "description": "Console log a specific variable"
+  },
+  "Console log": {
+    "prefix": "cl",
+    "body": ["console.log(`$1`);"],
+    "description": "Console log"
+  },
+  "Console object": {
+    "prefix": "clo",
+    "body": ["console.log({ $1 });"],
+    "description": "Console object"
+  },
+  "Return New Promise": {
+    "prefix": "prom",
+    "body": ["return new Promise((resolve, reject) => {\n\t$1\n});"],
+    "description": "Return a new Promise"
+  },
+  "TODO": {
+    "prefix": "todo",
+    "body": ["// TODO: $1"],
+    "description": "Todo comment"
+  },
+  "Import": {
+    "prefix": "im",
+    "body": "import $1 from '$2';",
+    "description": "import X from X"
+  },
+  "Import Named": {
+    "prefix": "imn",
+    "body": "import { $1 } from '$2';",
+    "description": "import { X } from X"
+  },
+  "Import As": {
+    "prefix": "immas",
+    "body": "import * as $1 from '$1'",
+    "description": "import * as X from X"
+  },
+  "Export": {
+    "prefix": "exx",
+    "body": "export $1",
+    "description": "export"
+  },
+  "Export Default": {
+    "prefix": "exxd",
+    "body": "export default $1",
+    "description": "export default"
+  },
+  "Export From": {
+    "prefix": "exxf",
+    "body": "export * from '$1'",
+    "description": "export * from 'path'"
+  },
+  "'test' test block": {
+    "prefix": "test",
+    "body": "test('$1', () => {\n\t$2\n});",
+    "description": "'test' test block"
+  },
+  "'it' test block": {
+    "prefix": "it",
+    "body": "it('$1', () => {\n\t$2\n});",
+    "description": "'it' test block"
+  },
+  "'describe' test block": {
+    "prefix": "desc",
+    "body": "describe('$1', () => {\n\t$2\n});",
+    "description": "'describe' test block"
+  },
+  "HTML Element": {
+    "prefix": "h",
+    "body": "<$1>$2</$1>",
+    "description": "HTML element"
+  },
+  "Expect toBe": {
+    "prefix": "exp",
+    "body": "expect($1).toBe($2);",
+    "description": "Expect toBe"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Import React": {
+    "prefix": "imr",
+    "body": "import React from 'react';\n\nconst $1 = ({$2}) => (\n\t$3\n);\n\nexport default $1;",
+    "description": "import React"
+  },
+  "Import React with Container": {
+    "prefix": "imrc",
+    "body": "import React, { Container } from 'react';\n\nclass $1 extends Container {\n\tstate = { $2 }\n\n\trender() {\n\t\treturn(\n\t\t\t$3\n\t\t)\n\t}\n}\n\nexport default $1;",
+    "description": "import React with Container"
+  }
+}
