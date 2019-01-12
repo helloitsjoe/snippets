@@ -39,6 +39,16 @@
     "body": "import * as $1 from '$1'",
     "description": "import * as X from X"
   },
+  "Import React": {
+    "prefix": "imr",
+    "body": "import React from 'react';\n\nconst $1 = ({$2}) => (\n\t$3\n);\n\nexport default $1;",
+    "description": "import React"
+  },
+  "Import React with Component": {
+    "prefix": "imrc",
+    "body": "import React, { Component } from 'react';\n\nclass $1 extends Component {\n\tstate = { $2 }\n\n\trender() {\n\t\treturn(\n\t\t\t$3\n\t\t)\n\t}\n}\n\nexport default $1;",
+    "description": "import React with Component"
+  },
   "Export": {
     "prefix": "exx",
     "body": "export $1",
