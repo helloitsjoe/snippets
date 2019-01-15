@@ -24,18 +24,21 @@
     "body": ["// TODO: $1"],
     "description": "Todo comment"
   },
+
+  "Section 1": "IMPORT/EXPORT",
+
   "Import": {
-    "prefix": "im",
+    "prefix": "import-default",
     "body": "import $1 from '$2';",
     "description": "import X from X"
   },
   "Import Named": {
-    "prefix": "imn",
+    "prefix": "import-named",
     "body": "import { $1 } from '$2';",
     "description": "import { X } from X"
   },
   "Import As": {
-    "prefix": "immas",
+    "prefix": "import-as",
     "body": "import * as $1 from '$1'",
     "description": "import * as X from X"
   },
@@ -64,29 +67,59 @@
     "body": "export * from '$1'",
     "description": "export * from 'path'"
   },
+
+  "Section 2": "JEST",
+
   "'test' test block": {
     "prefix": "test",
-    "body": "test('$1', () => {\n\t$2\n});",
+    "body": "test('$1', () => {\n\t\n});",
     "description": "'test' test block"
   },
   "'it' test block": {
     "prefix": "it",
-    "body": "it('$1', () => {\n\t$2\n});",
+    "body": "it('$1', () => {\n\t\n});",
     "description": "'it' test block"
   },
   "'describe' test block": {
-    "prefix": "desc",
-    "body": "describe('$1', () => {\n\t$2\n});",
+    "prefix": "describe",
+    "body": "describe('$1', () => {\n\t\n});",
     "description": "'describe' test block"
   },
-  "HTML Element": {
-    "prefix": "h",
-    "body": "<$1>$2</$1>",
-    "description": "HTML element"
+  "test.each": {
+    "prefix": "test-each",
+    "body": "test.each`\n\t$1\n`('', ({$2}) => {\n\t\n});"
   },
   "Expect toBe": {
-    "prefix": "exp",
+    "prefix": "expect-toBe",
     "body": "expect($1).toBe($2);",
     "description": "Expect toBe"
+  },
+
+  "Section 3": "ENZYME",
+
+  "data-enzyme-id prop": {
+    "prefix": "data-enzyme-id-prop",
+    "body": "data-enzyme-id=\"$1\"",
+    "description": "data-enzyme-id prop"
+  },
+  "data-enzyme-id Selector": {
+    "prefix": "data-enzyme-id-selector",
+    "body": "const $1 = '[data-enzyme-id=\"$1\"]';",
+    "description": "data-enzyme-id Selector"
+  },
+  "wrapper mount": {
+    "prefix": "wrapper-mount",
+    "body": "const wrapper = mount(<$1 />);",
+    "description": "wrapper mount"
+  },
+  "expect wrapper find": {
+    "prefix": "expect-wrapper-find",
+    "body": "expect(wrapper.find($1).$2()).toBe($3);",
+    "description": "expect wrapper find"
+  },
+  "simulate event": {
+    "prefix": "simulate-event",
+    "body": "wrapper.find($1).simulate('$2');",
+    "description": "simulate event"
   }
 }
