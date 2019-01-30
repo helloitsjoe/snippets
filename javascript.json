@@ -24,6 +24,16 @@
     "body": ["// TODO: $1"],
     "description": "Todo comment"
   },
+  "map-on-to-handle": {
+    "prefix": "map-on-to-handle",
+    "body": "on$1={this.handle$1}",
+    "description": "map-on-to-handle"
+  },
+  "map-on-to-on": {
+    "prefix": "map-on-to-on",
+    "body": "on$1={on$1}",
+    "description": "map-on-to-on"
+  },
 
   "Section 1": "IMPORT/EXPORT",
 
@@ -117,9 +127,46 @@
     "body": "expect(wrapper.find($1).$2()).toBe($3);",
     "description": "expect wrapper find"
   },
-  "simulate event": {
-    "prefix": "simulate-event",
-    "body": "wrapper.find($1).simulate('$2');",
-    "description": "simulate event"
+  "expect wrapper find exists": {
+    "prefix": "expect-wrapper-find-exists",
+    "body": "expect(wrapper.find($1).exists()).toBe(true);",
+    "description": "expect wrapper find exists"
+  },
+  "expect wrapper find text": {
+    "prefix": "expect-wrapper-find-text",
+    "body": "expect(wrapper.find($1).text()).toBe($2);",
+    "description": "expect wrapper find text"
+  },
+  "simulate submit": {
+    "prefix": "simulate-submit",
+    "body": "wrapper.find($1).simulate('submit');",
+    "description": "simulate submit"
+  },
+  "simulate change": {
+    "prefix": "simulate-change",
+    "body": "wrapper.find($1).simulate('change', {target: {value: $2}});",
+    "description": "simulate change"
+  },
+
+  "Section 4": "TESTING WORKSHOP",
+
+  "state": {
+    "prefix": "state",
+    "body": "state = {\n\tvalid: true,\n\tinputValue: '',\n\tname: ''\n}"
+  },
+  "handleChange": {
+    "prefix": "handleChange",
+    "body": "handleChange = e => {\n\tconst {value} = e.target;\n\tthis.setState({inputValue: value, valid: validate(value)});\n};",
+    "description": "handleChange"
+  },
+  "handleSubmit": {
+    "prefix": "handleSubmit",
+    "body": "handleSubmit = e => {\n\te.preventDefault();\n\tthis.setState(prevState => ({name: prevState.inputValue}));\n};",
+    "description": "handleSubmit"
+  },
+  "getBannerText": {
+    "prefix": "getBannerText",
+    "body": "getBannerText = () => this.state.name ? `Welcome, ${this.state.name}!` : `Please enter your name`;",
+    "description": "getBannerText"
   }
 }
