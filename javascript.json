@@ -14,6 +14,11 @@
     "body": ["console.log({ $1 });"],
     "description": "Console object"
   },
+  "Destructure variable": {
+    "prefix": "const-destructure",
+    "body": "const {$1} = $2",
+    "description": "Destructure variable"
+  },
   "Return New Promise": {
     "prefix": "prom",
     "body": ["return new Promise((resolve, reject) => {\n\t$1\n});"],
@@ -24,18 +29,31 @@
     "body": ["// TODO: $1"],
     "description": "Todo comment"
   },
-  "map-on-to-handle": {
+
+  "REACT": "REACT",
+
+  "setState": {
+    "prefix": "setState",
+    "body": "this.setState({$1});",
+    "description": "setState"
+  },
+  "setState (functional)": {
+    "prefix": "setState-prevState",
+    "body": "this.setState(prevState => ({$1}));",
+    "description": "setState (functional)"
+  },
+  "Map onEvent to handleEvent": {
     "prefix": "map-on-to-handle",
-    "body": "on$1={this.handle$1}",
-    "description": "map-on-to-handle"
+    "body": "on$1={this.handle$1}$0",
+    "description": "Map onEvent to handleEvent"
   },
   "map-on-to-on": {
-    "prefix": "map-on-to-on",
-    "body": "on$1={on$1}",
-    "description": "map-on-to-on"
+    "prefix": "Map onEvent to onEvent",
+    "body": "on$1={on$1}$0",
+    "description": "Map onEvent to onEvent"
   },
 
-  "Section 1": "IMPORT/EXPORT",
+  "IMPORT/EXPORT": "IMPORT/EXPORT",
 
   "Import": {
     "prefix": "import-default",
@@ -49,17 +67,17 @@
   },
   "Import As": {
     "prefix": "import-as",
-    "body": "import * as $1 from '$1'",
+    "body": "import * as $1 from '$1';",
     "description": "import * as X from X"
   },
   "Import React": {
     "prefix": "imr",
-    "body": "import React from 'react';\n\nconst $1 = ({$2}) => (\n\t$3\n);\n\nexport default $1;",
+    "body": "import React from 'react';\n\nconst $1 = ({$2}) => (\n\t$0\n);\n\nexport default $1;",
     "description": "import React"
   },
   "Import React with Component": {
     "prefix": "imrc",
-    "body": "import React, { Component } from 'react';\n\nclass $1 extends Component {\n\tstate = { $2 }\n\n\trender() {\n\t\treturn(\n\t\t\t$3\n\t\t)\n\t}\n}\n\nexport default $1;",
+    "body": "import React, { Component } from 'react';\n\nclass $1 extends Component {\n\tstate = { $2 }\n\n\trender() {\n\t\treturn(\n\t\t\t$0\n\t\t)\n\t}\n}\n\nexport default $1;",
     "description": "import React with Component"
   },
   "Export": {
@@ -78,26 +96,26 @@
     "description": "export * from 'path'"
   },
 
-  "Section 2": "JEST",
+  "JEST": "JEST",
 
   "'test' test block": {
     "prefix": "test",
-    "body": "test('$1', () => {\n\t\n});",
+    "body": "test('$1', () => {\n\t$0\n});",
     "description": "'test' test block"
   },
   "'it' test block": {
     "prefix": "it",
-    "body": "it('$1', () => {\n\t\n});",
+    "body": "it('$1', () => {\n\t$0\n});",
     "description": "'it' test block"
   },
   "'describe' test block": {
     "prefix": "describe",
-    "body": "describe('$1', () => {\n\t\n});",
+    "body": "describe('$1', () => {\n\t$0\n});",
     "description": "'describe' test block"
   },
   "test.each": {
     "prefix": "test-each",
-    "body": "test.each`\n\t$1\n`('', ({$2}) => {\n\t\n});"
+    "body": "test.each`\n\t$1\n`('', ({$2}) => {\n\t$0\n});"
   },
   "Expect toBe": {
     "prefix": "expect-toBe",
@@ -105,7 +123,7 @@
     "description": "Expect toBe"
   },
 
-  "Section 3": "ENZYME",
+  "ENZYME": "ENZYME",
 
   "data-enzyme-id prop": {
     "prefix": "data-enzyme-id-prop",
@@ -148,7 +166,7 @@
     "description": "simulate change"
   },
 
-  "Section 4": "TESTING WORKSHOP",
+  "TESTING WORKSHOP": "TESTING WORKSHOP",
 
   "state": {
     "prefix": "state",
@@ -156,17 +174,32 @@
   },
   "handleChange": {
     "prefix": "handleChange",
-    "body": "handleChange = e => {\n\tconst {value} = e.target;\n\tthis.setState({inputValue: value, valid: validate(value)});\n};",
+    "body": "handleChange = e => {\n\tconst {value} = e.target;\n\t$0\n};",
     "description": "handleChange"
   },
   "handleSubmit": {
     "prefix": "handleSubmit",
-    "body": "handleSubmit = e => {\n\te.preventDefault();\n\tthis.setState(prevState => ({name: prevState.inputValue}));\n};",
+    "body": "handleSubmit = e => {\n\te.preventDefault();\n\t$0\n};",
     "description": "handleSubmit"
   },
   "getBannerText": {
     "prefix": "getBannerText",
     "body": "getBannerText = () => this.state.name ? `Welcome, ${this.state.name}!` : `Please enter your name`;",
     "description": "getBannerText"
+  },
+  "button": {
+    "prefix": "button-with-id",
+    "body": "<button data-enzyme-id=\"BUTTON\">Submit</button>",
+    "description": "button-with-id"
+  },
+  "input": {
+    "prefix": "input-with-id",
+    "body": "<input data-enzyme-id=\"INPUT\" />",
+    "description": "input-with-id"
+  },
+  "form": {
+    "prefix": "form-with-id",
+    "body": "<form data-enzyme-id=\"FORM\">$0</form>",
+    "description": "form-with-id"
   }
 }
