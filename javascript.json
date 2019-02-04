@@ -1,205 +1,215 @@
 {
-  "Console log variable": {
-    "prefix": "cll",
-    "body": ["console.log(`$1:`, $1);"],
-    "description": "Console log a specific variable"
-  },
-  "Console log": {
-    "prefix": "cl",
-    "body": ["console.log(`$1`);"],
-    "description": "Console log"
-  },
-  "Console object": {
-    "prefix": "clo",
-    "body": ["console.log({ $1 });"],
-    "description": "Console object"
-  },
-  "Destructure variable": {
-    "prefix": "const-destructure",
-    "body": "const {$1} = $2",
-    "description": "Destructure variable"
-  },
-  "Return New Promise": {
-    "prefix": "prom",
-    "body": ["return new Promise((resolve, reject) => {\n\t$1\n});"],
-    "description": "Return a new Promise"
-  },
-  "TODO": {
-    "prefix": "todo",
-    "body": ["// TODO: $1"],
-    "description": "Todo comment"
-  },
-
-  "REACT": "REACT",
-
-  "setState": {
-    "prefix": "setState",
-    "body": "this.setState({$1});",
-    "description": "setState"
-  },
-  "setState (functional)": {
-    "prefix": "setState-prevState",
-    "body": "this.setState(prevState => ({$1}));",
-    "description": "setState (functional)"
-  },
-  "Map onEvent to handleEvent": {
-    "prefix": "map-on-to-handle",
-    "body": "on$1={this.handle$1}$0",
-    "description": "Map onEvent to handleEvent"
-  },
-  "map-on-to-on": {
-    "prefix": "Map onEvent to onEvent",
-    "body": "on$1={on$1}$0",
-    "description": "Map onEvent to onEvent"
-  },
-
-  "IMPORT/EXPORT": "IMPORT/EXPORT",
-
-  "Import": {
-    "prefix": "import-default",
-    "body": "import $1 from '$2';",
-    "description": "import X from X"
-  },
-  "Import Named": {
-    "prefix": "import-named",
-    "body": "import { $1 } from '$2';",
-    "description": "import { X } from X"
-  },
-  "Import As": {
-    "prefix": "import-as",
-    "body": "import * as $1 from '$1';",
-    "description": "import * as X from X"
-  },
-  "Import React": {
-    "prefix": "imr",
-    "body": "import React from 'react';\n\nconst $1 = ({$2}) => (\n\t$0\n);\n\nexport default $1;",
-    "description": "import React"
-  },
-  "Import React with Component": {
-    "prefix": "imrc",
-    "body": "import React, { Component } from 'react';\n\nclass $1 extends Component {\n\tstate = { $2 }\n\n\trender() {\n\t\treturn(\n\t\t\t$0\n\t\t)\n\t}\n}\n\nexport default $1;",
-    "description": "import React with Component"
-  },
-  "Export": {
-    "prefix": "exx",
-    "body": "export $1",
-    "description": "export"
-  },
-  "Export Default": {
-    "prefix": "exxd",
-    "body": "export default $1",
-    "description": "export default"
-  },
-  "Export From": {
-    "prefix": "exxf",
-    "body": "export * from '$1'",
-    "description": "export * from 'path'"
-  },
-
-  "JEST": "JEST",
-
-  "'test' test block": {
-    "prefix": "test",
-    "body": "test('$1', () => {\n\t$0\n});",
-    "description": "'test' test block"
-  },
-  "'it' test block": {
-    "prefix": "it",
-    "body": "it('$1', () => {\n\t$0\n});",
-    "description": "'it' test block"
-  },
-  "'describe' test block": {
-    "prefix": "describe",
-    "body": "describe('$1', () => {\n\t$0\n});",
-    "description": "'describe' test block"
-  },
-  "test.each": {
-    "prefix": "test-each",
-    "body": "test.each`\n\t$1\n`('', ({$2}) => {\n\t$0\n});"
-  },
-  "Expect toBe": {
-    "prefix": "expect-toBe",
-    "body": "expect($1).toBe($2);",
-    "description": "Expect toBe"
-  },
-
-  "ENZYME": "ENZYME",
-
-  "data-enzyme-id prop": {
-    "prefix": "data-enzyme-id-prop",
-    "body": "data-enzyme-id=\"$1\"",
-    "description": "data-enzyme-id prop"
-  },
-  "data-enzyme-id Selector": {
-    "prefix": "data-enzyme-id-selector",
-    "body": "const $1 = '[data-enzyme-id=\"$1\"]';",
-    "description": "data-enzyme-id Selector"
-  },
-  "wrapper mount": {
-    "prefix": "wrapper-mount",
-    "body": "const wrapper = mount(<$1 />);",
-    "description": "wrapper mount"
-  },
-  "expect wrapper find": {
-    "prefix": "expect-wrapper-find",
-    "body": "expect(wrapper.find($1).$2()).toBe($3);",
-    "description": "expect wrapper find"
-  },
-  "expect wrapper find exists": {
-    "prefix": "expect-wrapper-find-exists",
-    "body": "expect(wrapper.find($1).exists()).toBe(true);",
-    "description": "expect wrapper find exists"
-  },
-  "expect wrapper find text": {
-    "prefix": "expect-wrapper-find-text",
-    "body": "expect(wrapper.find($1).text()).toBe($2);",
-    "description": "expect wrapper find text"
-  },
-  "simulate submit": {
-    "prefix": "simulate-submit",
-    "body": "wrapper.find($1).simulate('submit');",
-    "description": "simulate submit"
-  },
-  "simulate change": {
-    "prefix": "simulate-change",
-    "body": "wrapper.find($1).simulate('change', {target: {value: $2}});",
-    "description": "simulate change"
-  },
-
-  "TESTING WORKSHOP": "TESTING WORKSHOP",
-
-  "state": {
-    "prefix": "state",
-    "body": "state = {\n\tvalid: true,\n\tinputValue: '',\n\tname: ''\n}"
-  },
-  "handleChange": {
-    "prefix": "handleChange",
-    "body": "handleChange = e => {\n\tconst {value} = e.target;\n\t$0\n};",
-    "description": "handleChange"
-  },
-  "handleSubmit": {
-    "prefix": "handleSubmit",
-    "body": "handleSubmit = e => {\n\te.preventDefault();\n\t$0\n};",
-    "description": "handleSubmit"
-  },
-  "getBannerText": {
-    "prefix": "getBannerText",
-    "body": "getBannerText = () => this.state.name ? `Welcome, ${this.state.name}!` : `Please enter your name`;",
-    "description": "getBannerText"
-  },
-  "button": {
-    "prefix": "button-with-id",
-    "body": "<button data-enzyme-id=\"BUTTON\">Submit</button>",
-    "description": "button-with-id"
-  },
-  "input": {
-    "prefix": "input-with-id",
-    "body": "<input data-enzyme-id=\"INPUT\" />",
-    "description": "input-with-id"
-  },
-  "form": {
-    "prefix": "form-with-id",
-    "body": "<form data-enzyme-id=\"FORM\">$0</form>",
-    "description": "form-with-id"
-  }
+	"Console log variable": {
+		"prefix": "cll",
+		"body": [
+			"console.log(`$1:`, $1);"
+		],
+		"description": "Console log a specific variable"
+	},
+	"Console log": {
+		"prefix": "cl",
+		"body": [
+			"console.log(`$1`);"
+		],
+		"description": "Console log"
+	},
+	"Console object": {
+		"prefix": "clo",
+		"body": [
+			"console.log({ $1 });"
+		],
+		"description": "Console object"
+	},
+	"Destructure variable": {
+		"prefix": "const-destructure",
+		"body": "const {$1} = $2",
+		"description": "Destructure variable"
+	},
+	"Return New Promise": {
+		"prefix": "prom",
+		"body": [
+			"return new Promise((resolve, reject) => {\n\t$1\n});"
+		],
+		"description": "Return a new Promise"
+	},
+	"TODO": {
+		"prefix": "todo",
+		"body": [
+			"// TODO: $1"
+		],
+		"description": "Todo comment"
+	},
+	"REACT": "REACT",
+	"Function Component": {
+		"prefix": "function-component-sfc",
+		"body": "const $1 = ({$2}) => (\n\t$0\n);\n\nexport default $1;",
+		"description": "Function Component"
+	},
+	"Class Component": {
+		"prefix": "class-component",
+		"body": "class $1 extends Component {\n\tstate = { $2 }\n\n\trender() {\n\t\treturn(\n\t\t\t$0\n\t\t)\n\t}\n}\n\nexport default $1;",
+		"description": "Class Component"
+	},
+	"setState": {
+		"prefix": "setState",
+		"body": "this.setState({$1});",
+		"description": "setState"
+	},
+	"setState (functional)": {
+		"prefix": "setState-prevState",
+		"body": "this.setState(prevState => ({$1}));",
+		"description": "setState (functional)"
+	},
+	"Map onEvent to handleEvent": {
+		"prefix": "map-on-to-handle",
+		"body": "on$1={this.handle$1}$0",
+		"description": "Map onEvent to handleEvent"
+	},
+	"map-on-to-on": {
+		"prefix": "Map onEvent to onEvent",
+		"body": "on$1={on$1}$0",
+		"description": "Map onEvent to onEvent"
+	},
+	"IMPORT/EXPORT": "IMPORT/EXPORT",
+	"Import": {
+		"prefix": "import-default",
+		"body": "import $1 from '$2';",
+		"description": "import X from X"
+	},
+	"Import Named": {
+		"prefix": "import-named",
+		"body": "import { $1 } from '$2';",
+		"description": "import { X } from X"
+	},
+	"Import As": {
+		"prefix": "import-as",
+		"body": "import * as $1 from '$1';",
+		"description": "import * as X from X"
+	},
+	"Import React": {
+		"prefix": "imr",
+		"body": "import React from 'react';",
+		"description": "import React"
+	},
+	"Import React with Component": {
+		"prefix": "imrc",
+		"body": "import React, { Component } from 'react';",
+		"description": "import React with Component"
+	},
+	"Export": {
+		"prefix": "exx",
+		"body": "export $1",
+		"description": "export"
+	},
+	"Export Default": {
+		"prefix": "exxd",
+		"body": "export default $1",
+		"description": "export default"
+	},
+	"Export From": {
+		"prefix": "exxf",
+		"body": "export * from '$1'",
+		"description": "export * from 'path'"
+	},
+	"JEST": "JEST",
+	"'test' test block": {
+		"prefix": "test",
+		"body": "test('$1', () => {\n\t$0\n});",
+		"description": "'test' test block"
+	},
+	"'it' test block": {
+		"prefix": "it",
+		"body": "it('$1', () => {\n\t$0\n});",
+		"description": "'it' test block"
+	},
+	"'describe' test block": {
+		"prefix": "describe",
+		"body": "describe('$1', () => {\n\t$0\n});",
+		"description": "'describe' test block"
+	},
+	"test.each": {
+		"prefix": "test-each",
+		"body": "test.each`\n\t$1\n`('', ({$2}) => {\n\t$0\n});"
+	},
+	"Expect toBe": {
+		"prefix": "expect-toBe",
+		"body": "expect($1).toBe($2);",
+		"description": "Expect toBe"
+	},
+	"ENZYME": "ENZYME",
+	"data-enzyme-id prop": {
+		"prefix": "data-enzyme-id-prop",
+		"body": "data-enzyme-id=\"$1\"",
+		"description": "data-enzyme-id prop"
+	},
+	"data-enzyme-id Selector": {
+		"prefix": "data-enzyme-id-selector",
+		"body": "const $1 = '[data-enzyme-id=\"$1\"]';",
+		"description": "data-enzyme-id Selector"
+	},
+	"wrapper mount": {
+		"prefix": "wrapper-mount",
+		"body": "const wrapper = mount(<$1 />);",
+		"description": "wrapper mount"
+	},
+	"expect wrapper find": {
+		"prefix": "expect-wrapper-find",
+		"body": "expect(wrapper.find($1).$2()).toBe($3);",
+		"description": "expect wrapper find"
+	},
+	"expect wrapper find exists": {
+		"prefix": "expect-wrapper-find-exists",
+		"body": "expect(wrapper.find($1).exists()).toBe(true);",
+		"description": "expect wrapper find exists"
+	},
+	"expect wrapper find text": {
+		"prefix": "expect-wrapper-find-text",
+		"body": "expect(wrapper.find($1).text()).toBe($2);",
+		"description": "expect wrapper find text"
+	},
+	"simulate submit": {
+		"prefix": "simulate-submit",
+		"body": "wrapper.find($1).simulate('submit');",
+		"description": "simulate submit"
+	},
+	"simulate change": {
+		"prefix": "simulate-change",
+		"body": "wrapper.find($1).simulate('change', {target: {value: $2}});",
+		"description": "simulate change"
+	},
+	"TESTING WORKSHOP": "TESTING WORKSHOP",
+	"state": {
+		"prefix": "state",
+		"body": "state = {\n\tvalid: true,\n\tinputValue: '',\n\tname: ''\n}"
+	},
+	"handleChange": {
+		"prefix": "handleChange",
+		"body": "handleChange = e => {\n\tconst {value} = e.target;\n\t$0\n};",
+		"description": "handleChange"
+	},
+	"handleSubmit": {
+		"prefix": "handleSubmit",
+		"body": "handleSubmit = e => {\n\te.preventDefault();\n\t$0\n};",
+		"description": "handleSubmit"
+	},
+	"getBannerText": {
+		"prefix": "getBannerText",
+		"body": "getBannerText = () => this.state.name ? `Welcome, ${this.state.name}!` : `Please enter your name`;",
+		"description": "getBannerText"
+	},
+	"button": {
+		"prefix": "button-with-id",
+		"body": "<button data-enzyme-id=\"BUTTON\">Submit</button>",
+		"description": "button-with-id"
+	},
+	"input": {
+		"prefix": "input-with-id",
+		"body": "<input data-enzyme-id=\"INPUT\" />",
+		"description": "input-with-id"
+	},
+	"form": {
+		"prefix": "form-with-id",
+		"body": "<form data-enzyme-id=\"FORM\">$0</form>",
+		"description": "form-with-id"
+	}
 }
