@@ -32,7 +32,7 @@
   "REACT": "REACT",
   "Function Component": {
     "prefix": "function-component-sfc",
-    "body": "const $1 = ({$2}) => (\n\t$0\n);\n\nexport default $1;",
+    "body": "export default function $1({$2}) {\n\treturn $0;\n}\n",
     "description": "Function Component"
   },
   "Class Component": {
@@ -59,6 +59,16 @@
     "prefix": "Map onEvent to onEvent",
     "body": "on$1={on$1}$0",
     "description": "Map onEvent to onEvent"
+  },
+  "propTypes and defaultProps": {
+    "prefix": "propTypes-defaultProps",
+    "body": "$1.propTypes = {\n\t$2: PropTypes.$3\n};\n\n$1.defaultProps = {\n\t$2: $4\n};",
+    "description": "propTypes/defaultProps"
+  },
+  "static propTypes and defaultProps": {
+    "prefix": "static-propTypes-defaultProps",
+    "body": "static propTypes = {\n\t$2: PropTypes.$3\n};\n\nstatic defaultProps = {\n\t$2: $4\n};",
+    "description": "static propTypes/defaultProps"
   },
   "IMPORT/EXPORT": "IMPORT/EXPORT",
   "Import": {
