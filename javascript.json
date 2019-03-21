@@ -29,7 +29,9 @@
     "body": "// TODO: $1",
     "description": "Todo comment"
   },
+  
   "REACT": "REACT",
+  
   "Function Component": {
     "prefix": "function-component-sfc",
     "body": "export default function $1({$2}) {\n\treturn $0;\n}\n",
@@ -70,7 +72,9 @@
     "body": "static propTypes = {\n\t$2: PropTypes.$3\n};\n\nstatic defaultProps = {\n\t$2: $4\n};",
     "description": "static propTypes/defaultProps"
   },
+  
   "IMPORT/EXPORT": "IMPORT/EXPORT",
+  
   "Import": {
     "prefix": "import-default",
     "body": "import $1 from '$2';",
@@ -116,7 +120,9 @@
     "body": "export * from '$1'",
     "description": "export * from 'path'"
   },
+  
   "JEST": "JEST",
+  
   "'test' test block": {
     "prefix": "test",
     "body": "test('$1', () => {\n\t$0\n});",
@@ -141,7 +147,9 @@
     "body": "expect($1).toBe($2);",
     "description": "Expect toBe"
   },
+  
   "ENZYME": "ENZYME",
+  
   "data-enzyme-id prop": {
     "prefix": "data-enzyme-id-prop",
     "body": "data-enzyme-id=\"$1\"",
@@ -182,7 +190,9 @@
     "body": "wrapper.find($1).simulate('change', {target: {value: $2}});",
     "description": "simulate change"
   },
+  
   "TESTING WORKSHOP": "TESTING WORKSHOP",
+  
   "state": {
     "prefix": "state",
     "body": "state = {\n\tvalid: true,\n\tinputValue: '',\n\tname: ''\n}"
