@@ -96,6 +96,11 @@
     "body": "import React, { Component } from 'react';",
     "description": "import React with Component"
   },
+  "Import PropTypes": {
+    "prefix": "impt",
+    "body": "import PropTypes from 'prop-types';",
+    "description": "import PropTypes"
+  },
   "Export": {
     "prefix": "exx",
     "body": "export $1",
